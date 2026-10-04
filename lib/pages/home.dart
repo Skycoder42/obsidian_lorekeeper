@@ -3,9 +3,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../components/counter.dart';
 
-class Home extends StatelessComponent {
-  const Home({super.key});
-
+class const Home({super.key}) extends StatelessComponent {
   @override
   Component build(BuildContext context) => section([
     const img(src: 'images/logo.svg', width: 80),

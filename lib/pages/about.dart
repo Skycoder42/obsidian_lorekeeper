@@ -1,9 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-class About extends StatelessComponent {
-  const About({super.key});
-
+class const About({super.key}) extends StatelessComponent {
   @override
   Component build(BuildContext context) => const section([
     ol([

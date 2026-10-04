@@ -3,14 +3,12 @@ import 'package:jaspr/jaspr.dart';
 
 import '../constants/theme.dart';
 
-class Counter extends StatefulComponent {
-  const Counter({super.key});
-
+class const Counter({super.key}) extends StatefulComponent {
   @override
   State<Counter> createState() => CounterState();
 }
 
-class CounterState extends State<Counter> {
+class CounterState() extends State<Counter> {
   // ignore: omit_obvious_property_types false positive
   int count = 0;
 

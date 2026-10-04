@@ -5,9 +5,7 @@ import 'pages/about.dart';
 import 'pages/home.dart';
 
 // The main component of your application.
-class App extends StatelessComponent {
-  const App({super.key});
-
+class const App({super.key}) extends StatelessComponent {
   @override
   Component build(BuildContext context) =>
       const div(classes: 'main', [Home(), About()]);
