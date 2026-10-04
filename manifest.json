@@ -1,0 +1,10 @@
+{
+  "id": "lorekeeper",
+  "name": "Lorekeeper",
+  "version": "0.0.1",
+  "minAppVersion": "1.0.0",
+  "description": "Improves taking notes for and planning DnD sessions.",
+  "author": "Skycoder42",
+  "authorUrl": "https://github.com/Skycoder42",
+  "isDesktopOnly": false
+}

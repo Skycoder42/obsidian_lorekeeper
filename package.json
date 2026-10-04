@@ -1,0 +1,21 @@
+{
+  "name": "obsidian-lorekeeper",
+  "version": "0.0.1",
+  "description": "An obsidian plugin to improve taking notes for and planning DnD sessions.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "test-vault": "tool/create-test-vault.sh"
+  },
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "obsidian": "^1.13.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
