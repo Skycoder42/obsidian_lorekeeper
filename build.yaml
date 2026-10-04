@@ -1,0 +1,8 @@
+targets:
+  $default:
+    builders:
+      # Only the styles are needed, as apps are mounted manually.
+      jaspr_builder:client_options:
+        enabled: false
+      jaspr_builder:client_entrypoint:
+        enabled: false

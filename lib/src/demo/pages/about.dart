@@ -36,5 +36,9 @@ class const About({super.key}) extends StatelessComponent {
     ]),
   ]);
 
-  static List<StyleRule> get styles => [css('ol').styles(maxWidth: 500.px)];
+  // Scoped to the app, as the styles are loaded globally into obsidian.
+  @css
+  static List<StyleRule> get styles => [
+    css('.main ol').styles(maxWidth: 500.px),
+  ];
 }

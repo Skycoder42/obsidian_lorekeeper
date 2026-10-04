@@ -7,10 +7,10 @@ Dart. Its goal is to enhance Obsidian with improved handling of campaign
 planning and session notes for tabletop RPGs.
 
 Custom UI is rendered with [Jaspr](https://jaspr.site). Jaspr is only used as
-a rendering library: there is no jaspr CLI, builder or `web/` folder. Apps are
-mounted on demand into obsidian elements via `ClientAppBinding`, and component
-styles are not collected via `@css` but must be rendered with a `Style`
-component.
+a rendering library: there is no jaspr CLI or `web/` folder, and `runApp` is not
+used. Apps are mounted on demand into obsidian elements via `ClientAppBinding`.
+Component styles are declared with `@css` as usual. As they are loaded globally
+into obsidian via `styles.css`, they must be scoped to the plugin's components.
 
 ## Architecture
 
@@ -22,7 +22,11 @@ component.
   `main.js`. Its banner and footer provide the JS glue: they expose the
   obsidian module as `globalThis.__obsidian` (which the bindings use via
   `@JS('__obsidian')`) and export the plugin class.
-- Build with `npm run build` (or `npm run dev` to watch).
+- `lib/styles.client.dart` only exists for jaspr_builder, which generates a
+  runner printing all `@css` styles reachable from `lib/main.dart`. esbuild
+  runs it to write `styles.css`.
+- Build with `npm run build` (or `npm run dev` to watch). This requires
+  build_runner to have run before (`dart run build_runner watch`).
   `npm run test-vault` creates a vault in `testing/` with the plugin installed.
 
 ## Obsidian API

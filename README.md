@@ -3,10 +3,12 @@ An obisidian plugin to improve taking notes for and planning DnD sessions
 
 ## Building the project
 
-Install the build tools with `npm install`, then build the plugin using
-`npm run build`. Use `npm run dev` to rebuild automatically on changes.
+Install the build tools with `npm install` and run the dart code generation via
+`dart run build_runner watch`. Then build the plugin using `npm run build`, or
+use `npm run dev` to rebuild automatically on changes.
 
-The plugin is built to `main.js`, which together with `manifest.json` is
+The plugin is built to `main.js` and `styles.css`, which together with
+`manifest.json` are
 installed into a vault's `.obsidian/plugins/lorekeeper/` folder.
 
 ## Testing the plugin
