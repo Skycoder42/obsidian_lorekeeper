@@ -11,28 +11,27 @@ class Counter extends StatefulComponent {
 }
 
 class CounterState extends State<Counter> {
+  // ignore: omit_obvious_property_types false positive
   int count = 0;
 
   @override
-  Component build(BuildContext context) {
-    return div([
-      div(classes: 'counter', [
-        button(
-          onClick: () {
-            setState(() => count--);
-          },
-          [.text('-')],
-        ),
-        span([.text('$count')]),
-        button(
-          onClick: () {
-            setState(() => count++);
-          },
-          [.text('+')],
-        ),
-      ]),
-    ]);
-  }
+  Component build(BuildContext context) => div([
+    div(classes: 'counter', [
+      button(
+        onClick: () {
+          setState(() => count--);
+        },
+        const [.text('-')],
+      ),
+      span([.text('$count')]),
+      button(
+        onClick: () {
+          setState(() => count++);
+        },
+        const [.text('+')],
+      ),
+    ]),
+  ]);
 
   @css
   static List<StyleRule> get styles => [
@@ -40,31 +39,31 @@ class CounterState extends State<Counter> {
       css('&').styles(
         display: .flex,
         padding: .symmetric(vertical: 10.px),
-        border: .symmetric(vertical: .solid(color: primaryColor, width: 2.px)),
+        border: .symmetric(
+          vertical: .solid(color: primaryColor, width: 2.px),
+        ),
         alignItems: .center,
       ),
       css('button', [
         css('&').styles(
           display: .flex,
           width: 2.em,
-          height: 2.em, 
-          border: .unset, 
+          height: 2.em,
+          border: .unset,
           radius: .all(.circular(2.em)),
           cursor: .pointer,
-          justifyContent: .center, 
+          justifyContent: .center,
           alignItems: .center,
           fontSize: 2.rem,
           backgroundColor: Colors.transparent,
         ),
-        css('&:hover').styles(
-          backgroundColor: const Color('#0001'),
-        ),
+        css('&:hover').styles(backgroundColor: const Color('#0001')),
       ]),
       css('span').styles(
         minWidth: 2.5.em,
         padding: .symmetric(horizontal: 2.rem),
-        boxSizing: .borderBox, 
-        color: primaryColor, 
+        boxSizing: .borderBox,
+        color: primaryColor,
         textAlign: .center,
         fontSize: 4.rem,
       ),

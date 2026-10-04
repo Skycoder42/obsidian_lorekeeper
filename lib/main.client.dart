@@ -1,6 +1,7 @@
 /// The entrypoint for the **client** app.
 ///
-/// This file is compiled to javascript and executed on the client when loading the page.
+/// This file is compiled to javascript and executed on the client when loading
+///  the page.
 library;
 
 // Client-specific Jaspr import.
@@ -10,5 +11,5 @@ import 'app.dart';
 
 void main() {
   // Attaches the [App] component to the <body> of the page.
-  runApp(App());
+  runApp(const App());
 }
