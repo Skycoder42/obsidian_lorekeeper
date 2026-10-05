@@ -54,6 +54,8 @@ class CounterState() extends State<Counter> {
           alignItems: .center,
           fontSize: 2.rem,
           backgroundColor: Colors.transparent,
+          // obsidian adds a shadow to all buttons
+          shadow: .none,
         ),
         css('&:hover').styles(backgroundColor: const Color('#0001')),
       ]),
